@@ -1,34 +1,32 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-// Імпортуємо наші компоненти
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { UserProvider } from './context/UserContext';
+import HomeScreen from './screens/HomeScreen';
+import DetailsScreen from './screens/DetailsScreen';
+import ApiScreen from './screens/ApiScreen';
+import FormScreen from './screens/FormScreen';
+import StorageScreen from './screens/StorageScreen';
+import HardwareScreen from './screens/HardwareScreen';
+import FirebaseScreen from './screens/FirebaseScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* Передаємо дані через props */}
-      <Header title="Мій перший застосунок" />
-      
-      <View style={styles.content}>
-        {/* Тут може бути основний контент пізніше */}
-      </View>
-
-      <Footer text="Розроблено студентом © 2026" />
-    </View>
+    <UserProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Головна' }} />
+          <Stack.Screen name="Details" component={DetailsScreen} options={{ title: 'Деталі' }} />
+          <Stack.Screen name="Api" component={ApiScreen} options={{ title: 'API (Лаб 7)' }} />
+          <Stack.Screen name="Form" component={FormScreen} options={{ title: 'Форма (Лаб 8)' }} />
+          <Stack.Screen name="Storage" component={StorageScreen} options={{ title: 'Сховище (Лаб 9)' }} />
+          <Stack.Screen name="Hardware" component={HardwareScreen} options={{ title: 'Камера (Лаб 11)' }} />
+          <Stack.Screen name="Firebase" component={FirebaseScreen} options={{ title: 'Firestore (Лаб 12)' }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </UserProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-    alignItems: 'center',
-    justifyContent: 'space-between', // Розсуває Header і Footer до країв
-    paddingVertical: 20,
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
-  }
-});
