@@ -1,27 +1,34 @@
 import React from 'react';
-import { Text, View, StyleSheet, StatusBar } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+// Імпортуємо наші компоненти
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* Текст згідно з завданням */}
-      <Text style={styles.text}>Привіт, React Native!</Text>
-      <StatusBar style="auto" />
+      {/* Передаємо дані через props */}
+      <Header title="Мій перший застосунок" />
+      
+      <View style={styles.content}>
+        {/* Тут може бути основний контент пізніше */}
+      </View>
+
+      <Footer text="Розроблено студентом © 2026" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // Займає весь екран
-    backgroundColor: '#fff',
-    justifyContent: 'center', // Центрування по вертикалі
-    alignItems: 'center',     // Центрування по горизонталі
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+    alignItems: 'center',
+    justifyContent: 'space-between', // Розсуває Header і Footer до країв
+    paddingVertical: 20,
   },
-  text: {
-    fontSize: 24,             // Розмір шрифту
-    color: 'blue',            // Синій колір за завданням
-    fontWeight: 'bold',
-    textAlign: 'center',      // Центрування тексту
-  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+  }
 });
