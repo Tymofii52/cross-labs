@@ -9,14 +9,14 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@amplitude/analytics-react-native": "^1.5.48",
+    "@amplitude/analytics-react-native": "^1.5.50",
     "@react-native-async-storage/async-storage": "2.2.0",
     "@react-navigation/native": "^7.1.33",
     "@react-navigation/native-stack": "^7.14.5",
     "axios": "^1.13.6",
     "expo": "~55.0.6",
-    "expo-constants": "~55.0.7",
-    "expo-device": "~55.0.9",
+    "expo-constants": "~55.0.8",
+    "expo-device": "~55.0.10",
     "expo-image-picker": "~55.0.12",
     "expo-location": "~55.1.2",
     "expo-sensors": "~55.0.8",

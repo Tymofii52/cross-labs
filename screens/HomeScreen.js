@@ -47,6 +47,7 @@ export default function HomeScreen({ navigation }) {
           <Button title="Сховище (Лаб 9)" onPress={() => navigation.navigate('Storage')} />
           <Button title="Камера (Лаб 11)" onPress={() => navigation.navigate('Hardware')} />
           <Button title="Firebase БД (Лаб 12)" onPress={() => navigation.navigate('Firebase')} />
+          <Button title="Аналітика (Лаб 13)" onPress={() => navigation.navigate('Analytics')} color="#008CBA" />
         </View>
 
       </ScrollView>
